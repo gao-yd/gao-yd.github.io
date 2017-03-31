@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://gao-yd.github.io/2017/03/30/hexo+github+next搭建个人博客/index.html">
 <meta property="og:site_name" content="MX Blog">
 <meta property="og:description" content="github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。">
-<meta property="og:updated_time" content="2017-03-31T07:42:37.471Z">
+<meta property="og:updated_time" content="2017-03-31T08:58:39.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo搭建个人博客总结篇">
 <meta name="twitter:description" content="github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。">
@@ -371,10 +371,28 @@
 <li>markdown相关语法</li>
 <li>npm</li>
 </ul>
-<p>1.下载并安装node.js   //具体过程就不再详细描述，网上教程很多<br>2.准备一个文本编辑器，最好支持markdown语法。    //个人比较推荐sublime<br>3.注册一个github账号<br>4.新建一个文件夹，我们将在这个文件夹下进行本地搭建。 </p>
+<p>1.下载并安装node.js   //具体过程就不再详细描述，网上教程很多<br>2.安装git<br>3.准备一个文本编辑器，最好支持markdown语法。    //个人比较推荐sublime<br>4.注册一个github账号<br>5.新建一个文件夹，我们将在这个文件夹下进行本地搭建。 </p>
 <h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><p>首先声明的我的配置环境是windows10.</p>
-<h3 id="使用npm安装所需要的插件"><a href="#使用npm安装所需要的插件" class="headerlink" title="使用npm安装所需要的插件"></a>使用npm安装所需要的插件</h3><p>1.打开命令行，并切换到刚刚新建的文件夹下,输入命令<code>npm init</code>。<br>2.输入<code>npm install hexo --save</code>。    //安装hexo<br>3.</p>
-<h2 id="next主题的安装与配置"><a href="#next主题的安装与配置" class="headerlink" title="next主题的安装与配置"></a>next主题的安装与配置</h2><h2 id="添加常用功能"><a href="#添加常用功能" class="headerlink" title="添加常用功能"></a>添加常用功能</h2>
+<h4 id="使用npm安装所需要的插件"><a href="#使用npm安装所需要的插件" class="headerlink" title="使用npm安装所需要的插件"></a>使用npm安装所需要的插件</h4><p>1.打开命令行，并切换到刚刚新建的文件夹下,输入命令<code>npm init</code>。<br>2.输入<code>npm install hexo --save</code>。    //安装hexo<br>3.输入<code>npm install hexo-deployer-git --save</code>。    //安装hexo自带的代码提交插件</p>
+<h4 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h4><p>1.输入<code>hexo init</code>    //初始化博客，生成博客目录<br>2.输入<code>hexo generate</code>    //生成静态html文件<br>3.输入<code>hexo server</code>        //启动本地博客预览服务，默认端口4000</p>
+<p>以上命令按照循序输入，并且正常执行完成之后，打开浏览器，输入<code>localhost:4000</code>应该就能预览你的博客了。至于报错的，请自行百度。</p>
+<h4 id="修改博客配置文件，关联github仓库"><a href="#修改博客配置文件，关联github仓库" class="headerlink" title="修改博客配置文件，关联github仓库"></a>修改博客配置文件，关联github仓库</h4><h4 id="一些常用命令："><a href="#一些常用命令：" class="headerlink" title="一些常用命令："></a>一些常用命令：</h4><ul>
+<li><p>hexo new”postName”     //新建文章</p>
+</li>
+<li><p>hexo new page”pageName”     //新建页面</p>
+</li>
+<li><p>hexo generate     //生成静态页面至public目录</p>
+</li>
+<li><p>hexo server     //开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</p>
+</li>
+<li><p>hexo deploy     //将.deploy目录部署到GitHub</p>
+</li>
+<li><p>hexo help     //查看帮助</p>
+</li>
+<li><p>hexo version     //查看Hexo的版本</p>
+</li>
+</ul>
+<h2 id="next主题的安装与配置"><a href="#next主题的安装与配置" class="headerlink" title="next主题的安装与配置"></a>next主题的安装与配置</h2><h2 id="添加常用功能"><a href="#添加常用功能" class="headerlink" title="添加常用功能"></a>添加常用功能</h2><h2 id="正在更新，稍安勿躁。"><a href="#正在更新，稍安勿躁。" class="headerlink" title="正在更新，稍安勿躁。"></a>正在更新，稍安勿躁。</h2>
       
     </div>
 
@@ -543,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建"><span class="nav-number">2.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用npm安装所需要的插件"><span class="nav-number">2.1.</span> <span class="nav-text">使用npm安装所需要的插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题的安装与配置"><span class="nav-number">3.</span> <span class="nav-text">next主题的安装与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加常用功能"><span class="nav-number">4.</span> <span class="nav-text">添加常用功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建"><span class="nav-number">2.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用npm安装所需要的插件"><span class="nav-number">2.0.1.</span> <span class="nav-text">使用npm安装所需要的插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化博客"><span class="nav-number">2.0.2.</span> <span class="nav-text">初始化博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改博客配置文件，关联github仓库"><span class="nav-number">2.0.3.</span> <span class="nav-text">修改博客配置文件，关联github仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用命令："><span class="nav-number">2.0.4.</span> <span class="nav-text">一些常用命令：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题的安装与配置"><span class="nav-number">3.</span> <span class="nav-text">next主题的安装与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加常用功能"><span class="nav-number">4.</span> <span class="nav-text">添加常用功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正在更新，稍安勿躁。"><span class="nav-number">5.</span> <span class="nav-text">正在更新，稍安勿躁。</span></a></li></ol></div>
             
 
           </div>
