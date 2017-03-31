@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="博客教程,hexo,next," />
 
 
 
@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://gao-yd.github.io/2017/03/30/hexo测试/index.html">
 <meta property="og:site_name" content="MX Blog">
 <meta property="og:description" content="github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。">
-<meta property="og:updated_time" content="2017-03-30T08:07:02.327Z">
+<meta property="og:updated_time" content="2017-03-31T06:50:57.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo搭建个人博客总结篇">
 <meta name="twitter:description" content="github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。">
@@ -105,7 +105,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -114,10 +114,10 @@
     },
     algolia: {
       applicationID: '',
-      apiKey: '',
-      indexName: '',
+      apiKey: 'ea1c35641e6e6104045064b3877d721c',
+      indexName: 'MX Blog',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到[${query}]相关的内容","hits_stats":"${hits} 条相关记录，共耗时${time} ms"}
     }
   };
 </script>
@@ -201,6 +201,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -217,6 +227,16 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -296,6 +316,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客教程/" itemprop="url" rel="index">
+                    <span itemprop="name">博客教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -356,6 +398,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/博客教程/" rel="tag"># 博客教程</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+        </div>
+      
 
       
         
@@ -382,6 +434,8 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -436,7 +490,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -613,6 +685,14 @@
 
 
 
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2129454"></script>
+      <!-- UY END -->
+    
   
 
 
