@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://gao-yd.github.io/2017/03/30/hexo+github+next搭建个人博客/index.html">
 <meta property="og:site_name" content="MX Blog">
 <meta property="og:description" content="github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。">
-<meta property="og:updated_time" content="2017-03-31T08:58:39.314Z">
+<meta property="og:updated_time" content="2017-04-01T08:46:33.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo搭建个人博客总结篇">
 <meta name="twitter:description" content="github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。">
@@ -363,7 +363,9 @@
       
 
       
-        <p>github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。</p>
+        <blockquote>
+<p>github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。</p>
+</blockquote>
 <a id="more"></a>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>此教程需要具备一下基础知识：</p>
 <ul>
@@ -376,7 +378,21 @@
 <h4 id="使用npm安装所需要的插件"><a href="#使用npm安装所需要的插件" class="headerlink" title="使用npm安装所需要的插件"></a>使用npm安装所需要的插件</h4><p>1.打开命令行，并切换到刚刚新建的文件夹下,输入命令<code>npm init</code>。<br>2.输入<code>npm install hexo --save</code>。    //安装hexo<br>3.输入<code>npm install hexo-deployer-git --save</code>。    //安装hexo自带的代码提交插件</p>
 <h4 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h4><p>1.输入<code>hexo init</code>    //初始化博客，生成博客目录<br>2.输入<code>hexo generate</code>    //生成静态html文件<br>3.输入<code>hexo server</code>        //启动本地博客预览服务，默认端口4000</p>
 <p>以上命令按照循序输入，并且正常执行完成之后，打开浏览器，输入<code>localhost:4000</code>应该就能预览你的博客了。至于报错的，请自行百度。</p>
-<h4 id="修改博客配置文件，关联github仓库"><a href="#修改博客配置文件，关联github仓库" class="headerlink" title="修改博客配置文件，关联github仓库"></a>修改博客配置文件，关联github仓库</h4><h4 id="一些常用命令："><a href="#一些常用命令：" class="headerlink" title="一些常用命令："></a>一些常用命令：</h4><ul>
+<h4 id="修改博客配置文件，测试并关联github仓库"><a href="#修改博客配置文件，测试并关联github仓库" class="headerlink" title="修改博客配置文件，测试并关联github仓库"></a>修改博客配置文件，测试并关联github仓库</h4><p>1.新建一个github仓储<br>    建立仓储的命名规则：<code>[你的github账户名].github.io</code><br>    例如我的就是<code>gao-yd.github.io</code></p>
+<p>2.修改博客的配置文件，其实主要也就是修改根目录下的<code>_config.yml</code>文件.</p>
+<p>在博客根目录找到<code>_config.yml</code>文件，使用编辑器打开。<br>当前需要修改的主要是两个部分<br>第一个是<code>site</code>下的，也就站点信息。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Site</div><div class="line">title: MX Blog    #博客标题</div><div class="line">subtitle:         #博客的副标题</div><div class="line">description:      #博客描述</div><div class="line">author: mx        #作者</div><div class="line">language: zh-Hans #语言</div><div class="line">timezone:         #时区</div></pre></td></tr></table></figure>
+<p><strong>修改注意事项：字段的冒号后面一定要有一个空格！！</strong></p>
+<p>第二个是修改<code>Deployment</code>配置。<br>找到<code>#Deployment</code>一般是在配置文件的最后，修改其中的<code>deploy</code>。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">    type: git</div><div class="line">    repo: https://github.com/gao-yd/gao-yd.github.io.git      #这个写刚刚新建的那个仓储的提交路径</div><div class="line">    branch: master</div></pre></td></tr></table></figure>
+<p>3.测试本地环境</p>
+<p>在命令行窗口依次输入以下命令</p>
+<pre><code>- hexo clean    //清楚历史生成的静态资源（也就是public文件夹）
+- hexo g        //hexo generate的简写，生成静态页面至public目录
+- hexo s         //hexo server的简写，开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）
+</code></pre><p>然后一些正常的情况下就能在<code>localhost:4000</code>的地址看到你修改过的博客了</p>
+<p>4.关联github仓储，提交博客的静态html文件到github.</p>
+<h4 id="一些常用命令："><a href="#一些常用命令：" class="headerlink" title="一些常用命令："></a>一些常用命令：</h4><ul>
 <li><p>hexo new”postName”     //新建文章</p>
 </li>
 <li><p>hexo new page”pageName”     //新建页面</p>
@@ -561,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建"><span class="nav-number">2.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用npm安装所需要的插件"><span class="nav-number">2.0.1.</span> <span class="nav-text">使用npm安装所需要的插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化博客"><span class="nav-number">2.0.2.</span> <span class="nav-text">初始化博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改博客配置文件，关联github仓库"><span class="nav-number">2.0.3.</span> <span class="nav-text">修改博客配置文件，关联github仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用命令："><span class="nav-number">2.0.4.</span> <span class="nav-text">一些常用命令：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题的安装与配置"><span class="nav-number">3.</span> <span class="nav-text">next主题的安装与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加常用功能"><span class="nav-number">4.</span> <span class="nav-text">添加常用功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正在更新，稍安勿躁。"><span class="nav-number">5.</span> <span class="nav-text">正在更新，稍安勿躁。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建"><span class="nav-number">2.</span> <span class="nav-text">开始搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用npm安装所需要的插件"><span class="nav-number">2.0.1.</span> <span class="nav-text">使用npm安装所需要的插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化博客"><span class="nav-number">2.0.2.</span> <span class="nav-text">初始化博客</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改博客配置文件，测试并关联github仓库"><span class="nav-number">2.0.3.</span> <span class="nav-text">修改博客配置文件，测试并关联github仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些常用命令："><span class="nav-number">2.0.4.</span> <span class="nav-text">一些常用命令：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题的安装与配置"><span class="nav-number">3.</span> <span class="nav-text">next主题的安装与配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加常用功能"><span class="nav-number">4.</span> <span class="nav-text">添加常用功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正在更新，稍安勿躁。"><span class="nav-number">5.</span> <span class="nav-text">正在更新，稍安勿躁。</span></a></li></ol></div>
             
 
           </div>

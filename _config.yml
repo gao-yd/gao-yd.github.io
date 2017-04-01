@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: MX Blog
-subtitle:
-description:
-author: mx
-language: zh-Hans
-timezone:
+title: MX Blog    #博客标题
+subtitle:         #博客的副标题
+description:      #博客描述
+author: mx        #作者
+language: zh-Hans #语言
+timezone:         #时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

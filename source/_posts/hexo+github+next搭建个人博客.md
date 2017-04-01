@@ -7,7 +7,7 @@ tags:
 	- next
 ---
 
-github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。
+> github+hexo搭建个人博客网上的教程已经很多了，但是本小白自己动手搭建时候还是遇到了一些问题，所以综合了网上其他大神的文章写了这一篇总结教程。
 
 <!--more-->
 
@@ -43,7 +43,53 @@ github+hexo搭建个人博客网上的教程已经很多了，但是本小白自
 
 以上命令按照循序输入，并且正常执行完成之后，打开浏览器，输入`localhost:4000`应该就能预览你的博客了。至于报错的，请自行百度。
 
-#### 修改博客配置文件，关联github仓库
+#### 修改博客配置文件，测试并关联github仓库
+
+1.新建一个github仓储
+	建立仓储的命名规则：`[你的github账户名].github.io`
+	例如我的就是`gao-yd.github.io`
+
+2.修改博客的配置文件，其实主要也就是修改根目录下的`_config.yml`文件.
+
+在博客根目录找到`_config.yml`文件，使用编辑器打开。
+当前需要修改的主要是两个部分
+第一个是`site`下的，也就站点信息。如下：
+
+```
+	# Site
+	title: MX Blog    #博客标题
+	subtitle:         #博客的副标题
+	description:      #博客描述
+	author: mx        #作者
+	language: zh-Hans #语言
+	timezone:         #时区
+
+```
+**修改注意事项：字段的冒号后面一定要有一个空格！！**
+
+第二个是修改`Deployment`配置。
+找到`#Deployment`一般是在配置文件的最后，修改其中的`deploy`。如下：
+
+```
+	deploy:
+	    type: git
+	    repo: https://github.com/gao-yd/gao-yd.github.io.git      #这个写刚刚新建的那个仓储的提交路径
+	    branch: master
+
+```
+
+3.测试本地环境
+	
+在命令行窗口依次输入以下命令
+
+	- hexo clean	//清楚历史生成的静态资源（也就是public文件夹）
+	- hexo g		//hexo generate的简写，生成静态页面至public目录
+	- hexo s 		//hexo server的简写，开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
+
+然后一些正常的情况下就能在`localhost:4000`的地址看到你修改过的博客了
+
+4.关联github仓储，提交博客的静态html文件到github.
+
 
 #### 一些常用命令：
 
